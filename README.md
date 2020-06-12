@@ -40,6 +40,10 @@ Host *
 docker build -t project-mpi .
 docker tag project-mpi gcr.io/<google-cloud-project-id>/project-mpi
 docker push gcr.io/<google-cloud-project-id>/project-mpi
+```
+Enter **deployment.yaml** and in **image**, change **google-cloud-project-id**
+
+```
 kubectl apply -f deployment.yaml
 kubectl get pods
 ```
