@@ -6,7 +6,7 @@ RUN yes | apt install mpich
 RUN yes | pip3 install mpi4py
 RUN yes | pip3 install google-cloud-firestore
 
-ADD project.py /mpi/project.py
+ADD projectNoFirestore.py /mpi/projectNoFirestore.py
 RUN apt-get install -y openssh-server
 
 RUN mkdir /var/run/sshd
@@ -18,12 +18,12 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 WORKDIR /mpi
 
 RUN mkdir -p /root/.ssh/
-ADD mpi_cluster.pub mpi_cluster.pub
-ADD mpi_cluster mpi_cluster
+ADD project_cluster.pub project_cluster.pub
+ADD project_cluster project_cluster
 
-RUN cat mpi_cluster.pub >> /root/.ssh/authorized_keys
-RUN cp mpi_cluster /root/.ssh/id_rsa
-RUN cp mpi_cluster.pub /root/.ssh/id_rsa.pub
+RUN cat project_cluster.pub >> /root/.ssh/authorized_keys
+RUN cp project_cluster /root/.ssh/id_rsa
+RUN cp project_cluster.pub /root/.ssh/id_rsa.pub
 
 RUN chmod 600 /root/.ssh/id_rsa
 

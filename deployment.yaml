@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: project-mpi
+ labels:
+   app: project-mpi
+spec:
+ replicas: 4
+ selector:
+   matchLabels:
+     app: project-mpi
+ template:
+   metadata:
+     labels:
+       app: project-mpi
+   spec:
+     containers:
+     - name: project-mpi
+       image: gcr.io/numeric-incline-274623/project-mpi
+       ports:
+       - containerPort: 22
