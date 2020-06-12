@@ -4,17 +4,14 @@ RUN apt-get update
 
 RUN yes | apt install mpich
 RUN yes | pip3 install mpi4py
-RUN yes | pip3 install numpy
-RUN yes | pip3 install opencv-python
 RUN yes | pip3 install google-cloud-firestore
-RUN yes | pip3 install Pillow
 
-ADD proyect.py /mpi/proyect.py
+ADD project.py /mpi/project.py
 RUN apt-get install -y openssh-server
 
 RUN mkdir /var/run/sshd
 
-RUN echo 'root:SergioEsElMejorProfeDelTec' | chpasswd
+RUN echo 'root:7p%Db#N_>k=de2p\' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
