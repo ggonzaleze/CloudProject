@@ -11,7 +11,7 @@ RUN apt-get install -y openssh-server
 
 RUN mkdir /var/run/sshd
 
-RUN echo 'root:7p%Db#N_>k=de2p\' | chpasswd
+RUN echo 'root:7p?Db#N_>k=de2pp' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
