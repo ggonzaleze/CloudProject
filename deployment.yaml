@@ -16,6 +16,6 @@ spec:
    spec:
      containers:
      - name: project-mpi
-       image: gcr.io/<google-cloud-project-id>/project-mpi
+       image: gcr.io/google-cloud-project-id/project-mpi
        ports:
        - containerPort: 22
