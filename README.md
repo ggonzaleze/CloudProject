@@ -63,5 +63,5 @@ kubectl get pods
 Get the name of the first pod
 
 ```
-kubectl exec project-mpi-9ff7549d6-572gb -- mpiexec -f hosts -n 2 python3 project.py
+kubectl exec project-mpi-9ff7549d6-572gb -- mpiexec -f hosts -n 2 python3 projectNoFirestore.py
 ```
