@@ -65,3 +65,8 @@ Get the name of the first pod
 ```
 kubectl exec <pod-name> -- mpiexec -f hosts -n 4 python3 projectNoFirestore.py
 ```
+
+Result should look something like this:
+<p>
+  
+![Screenshot](sampleResult.JPG)
